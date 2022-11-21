@@ -89,8 +89,7 @@ async fn get_(path: web::Path<i32>) -> Result<impl Responder, MyError> {
 #[actix_web::main]
 async fn main() -> std::io::Result<()> {
     {
-        let conn = Connection::open_in_memory().unwrap();
-
+        let conn = Connection::open("app.db").unwrap();
         conn.execute(
             "CREATE TABLE IF NOT EXISTS url (
                 id INTEGER PRIMARY KEY AUTOINCREMENT,
