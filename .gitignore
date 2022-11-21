@@ -1,3 +1,4 @@
 /target
 t.rs
 db.rs
+.db
